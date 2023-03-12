@@ -51,7 +51,7 @@ git commit -m "$COMMIT_MESSAGE"
 
 echo "Pushing commited changes to remote repository..."
 
-git push
+git push origin main
 
 cd ./moving-to-mastery-client
 
