@@ -1,8 +1,8 @@
 #/bin/bash
 
-GIT_EMAIL=$(git config user.email)
-GIT_USER_NAME=$(git config user.name)
-GIT_PASSWORD=$(git config user.password)
+GIT_EMAIL=$(git config --global user.email)
+GIT_USER_NAME=$(git config --global user.name)
+GIT_PASSWORD=$(git config --global user.password)
 
 if [ -z $GIT_EMAIL ]
 then
@@ -12,7 +12,7 @@ then
     read -p "Please first enter your git email to proceed:" GIT_EMAIL
     done
     
-    git config user.email "$GIT_EMAIL"
+    git config --global user.email "$GIT_EMAIL"
 fi
 
 if [ -z $GIT_USER_NAME ]
@@ -23,7 +23,7 @@ then
     read -p "Please first enter your git username to proceed:" GIT_USER_NAME
     done
 
-    git config user.name "$GIT_USER_NAME"
+    git config --global user.name "$GIT_USER_NAME"
 fi
 
 if [ -z $GIT_PASSWORD ]
@@ -34,7 +34,7 @@ then
     read -p "Please first enter your git password to proceed:" GIT_PASSWORD
     done
 
-    git config user.password "$GIT_PASSWORD"
+    git config --global user.password "$GIT_PASSWORD"
 fi
 
 echo "Adding git changes..."
