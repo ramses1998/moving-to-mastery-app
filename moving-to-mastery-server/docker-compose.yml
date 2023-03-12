@@ -1,0 +1,14 @@
+version: "3"
+services:
+  server:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    ports:
+      - "8080:8080"
+    privileged: true
+    volumes:
+      - ../moving-to-mastery-client/src/data:/data
+      - ./hosts:/etc/hosts:rw
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./src/main/resources/db/moving_to_mastery.accdb:/src/main/resources/db/moving_to_mastery.accdb
